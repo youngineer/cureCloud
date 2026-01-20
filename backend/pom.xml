@@ -60,34 +60,58 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Spring Security Dependencies -->
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>7.0.2</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- JWT Dependencies -->
+		<dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.6</version>
+        </dependency>
+		<dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+		<dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+
+		<!-- Source: https://mvnrepository.com/artifact/me.paulschwarz/springboot4-dotenv -->
+		<dependency>
+			<groupId>me.paulschwarz</groupId>
+			<artifactId>springboot4-dotenv</artifactId>
+			<version>5.1.0</version>
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- Spring Dotenv Dependency -->
-		<dependencyManagement>
-			<dependencies>
-				<dependency>
-					<groupId>me.paulschwarz</groupId>
-					<artifactId>spring-dotenv-bom</artifactId>
-					<version>$version</version>
-					<type>pom</type>
-					<scope>import</scope>
-				</dependency>
-			</dependencies>
-		</dependencyManagement>
+		<!-- Dotenv Java for standalone JDBC examples -->
+		<dependency>
+			<groupId>io.github.cdimascio</groupId>
+			<artifactId>dotenv-java</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+	</dependencies>
 
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>me.paulschwarz</groupId>
-				<artifactId>springboot4-dotenv</artifactId>
-				<optional>true</optional>
+				<artifactId>spring-dotenv-bom</artifactId>
+				<version>5.1.0</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 		</dependencies>
-	</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
